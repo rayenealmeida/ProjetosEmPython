@@ -18,7 +18,7 @@ class SimuladorDeDado:
                 print('Favor digitar sim ou não')
         except:
               print('Ocorreu um erro ao receber sua resposta')
-
+# estancando ne
     def GerarValorDoDado(self):
         print(random.randint(self.valor_minimo,self.valor_maximo))
 
