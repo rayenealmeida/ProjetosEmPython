@@ -18,6 +18,7 @@ class ChuteONumero:
             elif int(self.valor_do_chute) < self.valor_aleatorio:
                 print('Chute um valor mais alto!')
                 self.PedirValorAleatorio()
+            if int(self.valor_do_chute) == self.valor_aleatorio:
                 self.tentar_novamente = False
                 print('Parabéns você Acertou!')
 
