@@ -1,5 +1,6 @@
 # Simulador de dado
 # Simular o uso de um dado, gerando um valor de 1 a 6
+# Primeiro projeto 
 import random
 class SimuladorDeDado:
     def __init__(self):
@@ -18,7 +19,7 @@ class SimuladorDeDado:
                 print('Favor digitar sim ou não')
         except:
               print('Ocorreu um erro ao receber sua resposta')
-# estancando ne
+
     def GerarValorDoDado(self):
         print(random.randint(self.valor_minimo,self.valor_maximo))
 
