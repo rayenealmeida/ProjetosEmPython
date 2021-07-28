@@ -9,21 +9,22 @@ class jogoDeAventura:
         self.pergunta2 = 'Chegando no local da sua casa, vocẽ é levada para escolher qual criatura te chama mais atenção. E isso te ajudará a saber o seu camminho. Você prefere um grifo ou uma cobra? (grifo/cobra) ' #grifo = grifinória e cobra = sonserina
         self.pergunta3 = 'Você está com pouco tempo e precisa de ir até a biblioteca para estudar para o teste de amanhã, portato há uma regra que diz que é proibido estar fora da cama após as 22 horas, e você acabou de chegar da escolha da criatura. Então você escolhe seguir sempre as regras ou ir contra as regras? (seguir/ir contra) ' # seguir sempre as regras = grifinória e ir contra as regras = sonserina
         self.pergunta4 = 'Após o teste, você foi levado para para a quadra para escolher por fim qual elemento te representa. Qual elemento você vai escolher? terra ou fogo? (t/f) ' #terra = sonserina e fogo = grifinória
-    
+        self.finalHistoria1 = 'O Barão Sangrento vai ficar feliz em te conhecer'  
+        self.finalHistoria2 = 'Cara de Trouxa!'
+        self.finalHistoria3 = 'Eu amo essa sua ambição'
+        self.finalHistoria4 = 'Cara de Trouxa!'
+
     def iniciar(self):
         resposta1 = input(self.pergunta1)
         if resposta1 == 'subsolo' or resposta1 == 's':
-                resposta1S = input(self.pergunta2)
-                if resposta1S == 'torre':
-                    print(self.finalHistoria1)
-                if resposta1S == 'grifo':
-                    print(self.finalHistoria2)
-        if resposta1 == 'ir contra':
-            resposta1S = input(self.pergunta3)
-            if resposta1S == 'terra':
-                    print(self.finalHistoria3)
-            if resposta1S == 'fogo':
-                    print(self.finalHistoria4)
+               print(self.finalHistoria1)
+        elif resposta1 == 'torre' or resposta1 == 't':
+               print(self.finalHistoria2)
+               resposta2 = input(self.pergunta2)
+        if resposta2 == 'cobra':
+               print(self.finalHistoria3)
+        elif resposta2 == 'grifo':
+               print(self.finalHistoria4)
 
 jogo = jogoDeAventura()
 jogo.iniciar()
