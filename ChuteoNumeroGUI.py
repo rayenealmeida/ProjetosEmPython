@@ -1,3 +1,4 @@
+from _typeshed import Self
 import random 
 import PySimpleGUI as sg
 
@@ -19,24 +20,28 @@ class ChuteONumero:
         # Criar uma janela
         self.janela = sg.Window('Chute o numero!',layout=layout)
         self.GerarNumeroAleatorio()
-
         try:
             while True:
-                # 
-                if int(self.valor_do_chute) > self.valor_aleatorio:
-                    print('Chute um valor mais Baixo!')
-                    self.PedirValorAleatorio()
-                elif int(self.valor_do_chute) < self.valor_aleatorio:
-                    print('Chute um valor mais alto!')
-                    self.PedirValorAleatorio()
-                if int(self.valor_do_chute) == self.valor_aleatorio:
-                    self.tentar_novamente = False
-                    print('Parabéns você Acertou!')
+                # Receber os valores
+                self.vento, self.valores = self.janela.Read()
+                # Fazer alguma coisa com estes valores
+                if self.evento == 'Chutar!':
+                    self.valor_do_chute = self.valores ['ValorChute']
+                    while self.tentar_novamente == True:
+                        if int(self.valor_do_chute) > self.valor_aleatorio:
+                            print('Chute um valor mais baixo!')
+                            break
+                        elif int(self.valor_do_chute) < self.valor_aleatorio:
+                            print('Chute um valor mais alto!')
+                            break
+                        if int(self.valor_do_chute) == self.valor_aleatorio:
+                            self.tentar_novamente = False
+                            print('Parabéns você acertou!')
+                            break
+        except:
+            print('Favor digitar apenas números!')
+            self.iniciar()
 
-
-
-    def PedirValorAleatorio(self):
-        self.valor_do_chute = input('Chute um numero: ')           
 
     def GerarNumeroAleatorio(self):
         self.valor_aleatorio = random.randint(self.valor_minimo,self.valor_maximo)
