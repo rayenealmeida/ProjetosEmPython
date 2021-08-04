@@ -19,7 +19,7 @@ class jogoDeAventura:
         # layout
         layout = [ 
             [sg.Output(size=(50,0))],
-            [sg.Input(size=(25,0))],
+            [sg.Input(size=(25,0),key='escolha')],
             [sg.Button('Iniciar'), sg.Button('Responder')]
         ]
         # Criar uma janela
@@ -50,7 +50,7 @@ class jogoDeAventura:
             if self.valores['escolha'] == 'n':
                 print(self.pergunta3)
                 self.LerValores()
-                
+
                 if self.valores['escolha'] == 'seguir':
                     print(self.finalHistoria5)
                 if self.valores['escolha'] == 'ir contra':
