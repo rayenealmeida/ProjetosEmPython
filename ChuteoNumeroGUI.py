@@ -22,7 +22,7 @@ class ChuteONumero:
         try:
             while True:
                 # Receber os valores
-                self.vento, self.valores = self.janela.Read()
+                self.evento, self.valores = self.janela.Read()
                 # Fazer alguma coisa com estes valores
                 if self.evento == 'Chutar!':
                     self.valor_do_chute = self.valores ['ValorChute']
