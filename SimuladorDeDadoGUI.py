@@ -17,15 +17,14 @@ class SimuladorDeDado:
 # Ler os valores da tela
         self.eventos, self.valores = self.janela.Read()
 # fazer alguma coisa com esses valores
-        while True:
-            try:
-                if self.eventos == 'sim' or self.eventos == 's':
-                    self.GerarValorDoDado()
-                elif self.eventos == 'não' or self.eventos == 'n':
-                    print('Agradecemos a sua participação')
-                else:
-                    print('Favor digitar sim ou não')
-            except:
+        try:
+            if self.eventos == 'sim' or self.eventos == 's':
+                self.GerarValorDoDado()
+            elif self.eventos == 'não' or self.eventos == 'n':
+                print('Agradecemos a sua participação')
+            else:
+                print('Favor digitar sim ou não')
+        except:
                 print('Ocorreu um erro ao receber sua resposta')
 
     def GerarValorDoDado(self):
