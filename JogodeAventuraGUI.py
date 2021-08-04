@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 class jogoDeAventura:
     def __init__(self):
+        self.pergunta0 = 'Você que participar da história para descobrir se vencerá?'
         self.pergunta1 = 'Vai haver uma guerra entre duas casas e vocẽ será direcionado para a sua. Vocẽ chega na escola de magia e bruxaria de Hogwarts e precisa de escolher qual local você quer para ser a sala comunal da sua casa. A professora te entrega um mapa com duas direções, e você precisa ir em apenas uma delas. Você gostaria de ir ao subsolo ou à torre? (s/t)' #subsolo = sonserina e torre = grifinória
         self.pergunta2 = 'Chegando no local da sua casa, vocẽ é levada para escolher qual criatura te chama mais atenção. E isso te ajudará a saber o seu camminho. Você prefere um grifo ou uma cobra? (grifo/cobra) ' #grifo = grifinória e cobra = sonserina
         self.pergunta3 = 'Você está com pouco tempo e precisa de ir até a biblioteca para estudar para o teste de amanhã, portato há uma regra que diz que é proibido estar fora da cama após as 22 horas, e você acabou de chegar da escolha da criatura. Então você escolhe seguir sempre as regras ou ir contra as regras? (seguir/ir contra) ' # seguir sempre as regras = grifinória e ir contra as regras = sonserina
@@ -28,32 +29,30 @@ class jogoDeAventura:
             self.LerValores()
             #Fazer algo com os dados 
             if self.evento == 'Iniciar':
-                print(self.pergunta1)
+                print(self.pergunta0)
                 self.LerValores()
+                
+                if self.valores['escolha']== 's':
+                    print(self.pergunta1)
+                    self.LerValores()
                 
                 if self.valores['escolha']== 'subsolo':
                     print(self.finalHistoria1)
-                    print(self.pergunta2)
-                    self.LerValores()
                 if self.valores['escolha'] == 'torre':
                     print(self.finalHistoria2)
                     print(self.pergunta2)
-                    self.LerValores()
 
                 if self.valores['escolha']== 'cobra':
                     print(self.finalHistoria3)
-                    print(self.pergunta3)
-                    self.LerValores()
                 if self.valores['escolha'] == 'grifo':
                     print(self.finalHistoria4)
-                    print(self.pergunta3)
-                    self.LerValores()
 
-            
+            if self.valores['escolha'] == 'n':
+                print(self.pergunta3)
+                self.LerValores()
+                
                 if self.valores['escolha'] == 'seguir':
                     print(self.finalHistoria5)
-                    print(self.pergunta4)
-                    self.LerValores()
                 if self.valores['escolha'] == 'ir contra':
                     print(self.finalHistoria6)
                     print(self.pergunta4)
