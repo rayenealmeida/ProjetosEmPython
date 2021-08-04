@@ -1,8 +1,4 @@
-# Jogo de Aventura 
-# Um jogo de decisões onde eu terei que criar vários finais diferentes baseados nas respostas que forem dadas
-# chegar em finais diferentes na minha historia de acordo com as respostas que eu passe para o programa
-
-#Cenário: Guerra entre duas casas: grifinória e sonserina. Somente sonserina irá vencer, e grifinória irá perder! então eu tenho que tomar as decisões corretas para chegar até a vitória, que somente sonserina ira conseguir! 
+import PySimpleGUI as sg
 class jogoDeAventura:
     def __init__(self):
         self.pergunta1 = 'Vai haver uma guerra entre duas casas e vocẽ será direcionado para a sua. Vocẽ chega na escola de magia e bruxaria de Hogwarts e precisa de escolher qual local você quer para ser a sala comunal da sua casa. A professora te entrega um mapa com duas direções, e você precisa ir em apenas uma delas. Você gostaria de ir ao subsolo ou à torre? (s/t)' #subsolo = sonserina e torre = grifinória
@@ -19,6 +15,12 @@ class jogoDeAventura:
         self.finalHistoria8 = 'Perdeu! você deve ser um Weasley'
 
     def iniciar(self):
+        # layout
+        layout = [ 
+            [sg.Output(size=(50,0))],
+            [sg.Input(size=(25,0))],
+            [sg.Button('Iniciar'), sg.Button('Responder')]
+        ]
         resposta1 = input(self.pergunta1)
         if resposta1 == 'subsolo' or resposta1 == 's':
                print(self.finalHistoria1)
