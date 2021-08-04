@@ -20,7 +20,7 @@ class jogoDeAventura:
         layout = [ 
             [sg.Output(size=(50,0))],
             [sg.Input(size=(25,0),key='escolha')],
-            [sg.Button('Iniciar'), sg.Button('Responder')]
+            [sg.Button('Iniciar'),sg.Button('Responder')]
         ]
         # Criar uma janela
         self.janela = sg.Window('Jogo de aventura!', layout=layout)
@@ -65,7 +65,7 @@ class jogoDeAventura:
 
 
     def LerValores(self):
-        self.evento, self,valores = self.janela.Read()
+        self.evento, self.valores = self.janela.Read()
 
 jogo = jogoDeAventura()
 jogo.iniciar()
