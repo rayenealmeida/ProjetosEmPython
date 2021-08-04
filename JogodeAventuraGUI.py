@@ -41,6 +41,7 @@ class jogoDeAventura:
                 if self.valores['escolha'] == 'torre':
                     print(self.finalHistoria2)
                     print(self.pergunta2)
+                    self.LerValores()
 
                 if self.valores['escolha']== 'cobra':
                     print(self.finalHistoria3)
