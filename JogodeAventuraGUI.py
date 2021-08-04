@@ -29,27 +29,44 @@ class jogoDeAventura:
             #Fazer algo com os dados 
             if self.evento == 'Iniciar':
                 print(self.pergunta1)
+                self.LerValores()
                 
                 if self.valores['escolha']== 'subsolo':
                     print(self.finalHistoria1)
+                    print(self.pergunta2)
+                    self.LerValores()
                 if self.valores['escolha'] == 'torre':
                     print(self.finalHistoria2)
+                    print(self.pergunta2)
+                    self.LerValores()
 
                 if self.valores['escolha']== 'cobra':
                     print(self.finalHistoria3)
+                    print(self.pergunta3)
+                    self.LerValores()
                 if self.valores['escolha'] == 'grifo':
                     print(self.finalHistoria4)
+                    print(self.pergunta3)
+                    self.LerValores()
+
             
                 if self.valores['escolha'] == 'seguir':
                     print(self.finalHistoria5)
+                    print(self.pergunta4)
+                    self.LerValores()
                 if self.valores['escolha'] == 'ir contra':
                     print(self.finalHistoria6)
-                
+                    print(self.pergunta4)
+                    self.LerValores()
+
                 if self.valores['escolha'] == 'terra':
                     print(self.finalHistoria7)
                 if self.valores['escolha'] == 'fogo':
                     print(self.finalHistoria8)
-               
+
+
+    def LerValores(self):
+        self.evento, self,valores = self.janela.Read()
 
 jogo = jogoDeAventura()
 jogo.iniciar()
