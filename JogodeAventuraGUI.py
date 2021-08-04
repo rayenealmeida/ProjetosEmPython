@@ -21,26 +21,34 @@ class jogoDeAventura:
             [sg.Input(size=(25,0))],
             [sg.Button('Iniciar'), sg.Button('Responder')]
         ]
-        resposta1 = input(self.pergunta1)
-        if resposta1 == 'subsolo' or resposta1 == 's':
-               print(self.finalHistoria1)
-        elif resposta1 == 'torre' or resposta1 == 't':
-               print(self.finalHistoria2)
-        resposta2 = input(self.pergunta2)
-        if resposta2 == 'cobra':
-               print(self.finalHistoria3)
-        elif resposta2 == 'grifo':
-               print(self.finalHistoria4)
-        resposta3 = input(self.pergunta3)
-        if resposta3 == 'seguir':
-               print(self.finalHistoria5)
-        elif resposta3 == 'ir contra':
-               print(self.finalHistoria6)
-        resposta4 = input(self.pergunta4)
-        if resposta4 == 'terra':
-               print(self.finalHistoria7)
-        elif resposta4 == 'fogo':
-              print(self.finalHistoria8)
+        # Criar uma janela
+        self.janela = sg.Window('Jogo de aventura!', layout=layout)
+        while True:
+            # Ler os dados
+            self.LerValores()
+            #Fazer algo com os dados 
+            if self.evento == 'Iniciar':
+                print(self.pergunta1)
+                
+                if self.valores['escolha']== 'subsolo':
+                    print(self.finalHistoria1)
+                if self.valores['escolha'] == 'torre':
+                    print(self.finalHistoria2)
+
+                if self.valores['escolha']== 'cobra':
+                    print(self.finalHistoria3)
+                if self.valores['escolha'] == 'grifo':
+                    print(self.finalHistoria4)
+            
+                if self.valores['escolha'] == 'seguir':
+                    print(self.finalHistoria5)
+                if self.valores['escolha'] == 'ir contra':
+                    print(self.finalHistoria6)
+                
+                if self.valores['escolha'] == 'terra':
+                    print(self.finalHistoria7)
+                if self.valores['escolha'] == 'fogo':
+                    print(self.finalHistoria8)
                
 
 jogo = jogoDeAventura()
