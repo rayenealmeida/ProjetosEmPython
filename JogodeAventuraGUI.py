@@ -1,8 +1,8 @@
 import PySimpleGUI as sg
 class jogoDeAventura:
     def __init__(self):
-        self.pergunta0 = 'Você que participar da história para descobrir se vencerá?'
-        self.pergunta1 = 'Vai haver uma guerra entre duas casas e vocẽ será direcionado para a sua. Vocẽ chega na escola de magia e bruxaria de Hogwarts e precisa de escolher qual local você quer para ser a sala comunal da sua casa. A professora te entrega um mapa com duas direções, e você precisa ir em apenas uma delas. Você gostaria de ir ao subsolo ou à torre? (s/t)' #subsolo = sonserina e torre = grifinória
+        self.pergunta0 = 'Você quer participar da história para descobrir se vencerá? (s/n) '
+        self.pergunta1 = 'Vai haver uma guerra entre duas casas e vocẽ será direcionado para a sua. Vocẽ chega na escola de magia e bruxaria de Hogwarts e precisa de escolher qual local você quer para ser a sala comunal da sua casa. A professora te entrega um mapa com duas direções, e você precisa ir em apenas uma delas. Você gostaria de ir ao subsolo ou à torre? (subsolo/torre ' #subsolo = sonserina e torre = grifinória
         self.pergunta2 = 'Chegando no local da sua casa, vocẽ é levada para escolher qual criatura te chama mais atenção. E isso te ajudará a saber o seu camminho. Você prefere um grifo ou uma cobra? (grifo/cobra) ' #grifo = grifinória e cobra = sonserina
         self.pergunta3 = 'Você está com pouco tempo e precisa de ir até a biblioteca para estudar para o teste de amanhã, portato há uma regra que diz que é proibido estar fora da cama após as 22 horas, e você acabou de chegar da escolha da criatura. Então você escolhe seguir sempre as regras ou ir contra as regras? (seguir/ir contra) ' # seguir sempre as regras = grifinória e ir contra as regras = sonserina
         self.pergunta4 = 'Após o teste, você foi levado para a quadra para escolher por fim qual elemento te representa. Qual elemento você vai escolher? terra ou fogo? (t/f) ' #terra = sonserina e fogo = grifinória
@@ -18,8 +18,8 @@ class jogoDeAventura:
     def iniciar(self):
         # layout
         layout = [ 
-            [sg.Output(size=(50,0))],
-            [sg.Input(size=(25,0),key='escolha')],
+            [sg.Output(size=(50,10))],
+            [sg.Input(size=(25,10),key='escolha')],
             [sg.Button('Iniciar'),sg.Button('Responder')]
         ]
         # Criar uma janela
